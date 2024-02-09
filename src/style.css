@@ -1,0 +1,172 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  button, a{
+    cursor: pointer;
+    }
+  
+  a{
+      text-decoration: none;
+  }
+  
+  
+  /* Footer */
+  
+  html {
+    /* footer support */
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+  /* footer support */
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .fa-github {
+    color: white;
+    font-size: 22px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+  
+  /* Carrousel styling */
+  
+  :root{
+    --border-radius: 12px;
+    --ball-background:rgb(75, 209, 71);
+    --text:white;
+    --gap:0px;
+    --ball-height:9vh;
+    --items-height:8vh;
+    --ball-font-size:1.6rem;
+    --items-font-size:1.5rem;
+    --translate-value:0px;
+  }
+  
+  .carrousel-container{
+    display: flex;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    gap: 3vw;
+    padding: 0vh 1vw;
+    position: relative;
+  }
+  
+  .arrow{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius:50%;
+    aspect-ratio: 1/1;
+    background-color: beige;
+    color: rgb(87, 50, 6);
+    transition: background-color 0.4s ease-in;
+    cursor: pointer;
+  }
+  
+  .arrow:hover{
+    color: beige;
+    background-color: rgb(87, 50, 6);
+  }
+  
+  .img-container{
+    flex: 10;
+    border-radius: var(--border-radius);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .carrousel-img{
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    transition: opacity 0.6s ease-in-out;
+    will-change:opacity;
+  }
+  
+  .carrousel-img.display{
+    opacity: 1;
+    height: 100%;
+    width: auto;
+    aspect-ratio: initial;
+    border-radius: var(--border-radius);
+  }
+  
+  
+  .dot-container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 102%;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .dot{
+    background-color: white;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    border: 2px solid black;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot:hover{
+    background-color: rgb(139, 133, 133);
+  }
+  
+  .dot.active{
+    background-color: rgb(82, 78, 78);
+  }
+  
