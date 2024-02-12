@@ -5,23 +5,18 @@ import l3 from "./landscape3.webp"
 
 
 const imageLinks = [l1,l2,l3]
-
-
-
 const imagesNode = document.querySelectorAll(".carrousel-img")
 imagesNode.forEach((image, index) => {
     let counter = index 
     image.src = imageLinks[counter]
 })
 const images = [...imagesNode]
-
 const updateImage = function(newIndex){
     const imgContainer = document.querySelector(".img-container")
     const imageDisplaying = document.querySelector(".display")
     imageDisplaying.classList.remove("display")
     imgContainer.children[newIndex].classList.add("display")
 }
-
 const createButtons = function(){
     const numberButtons = images.length
     for(let i = 0; i < numberButtons; i++ ){
@@ -63,8 +58,19 @@ const pressArrow = function(event){
     })
 }
 
-document.querySelector(".arrow.right").addEventListener("click", pressArrow)
+const arrowRight = document.querySelector(".arrow.right")
+arrowRight.addEventListener("click", pressArrow)
 document.querySelector(".arrow.left").addEventListener("click", pressArrow)
+
+
+let interval;
+window.addEventListener("DOMContentLoaded", function() {
+    interval = setInterval(() => arrowRight.click(), 5000);
+})
+
+window.addEventListener("beforeunload", function() { 
+    clearInterval(interval);
+})
 
 createButtons()
 const dots = document.querySelectorAll(".dot")
